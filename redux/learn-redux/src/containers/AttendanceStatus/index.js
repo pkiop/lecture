@@ -1,11 +1,15 @@
 import { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setAttendance } from '../../actions/attendance';
 import AttendanceStatus from '../../components/AttendanceStatus';
 
 function AttendanceStatusContainer() {
-  const inputRef = useRef(null);
+  const dispatch = useDispatch();
 
+  const inputRef = useRef(null);
   const onClick = () => {
-    console.log('value : ', inputRef.current.value);
+    const typedStudentNumber = inputRef.current.value;
+    dispatch(setAttendance(Number(typedStudentNumber), true));
   };
   return <AttendanceStatus inputRef={inputRef} onClick={onClick} />;
 }
