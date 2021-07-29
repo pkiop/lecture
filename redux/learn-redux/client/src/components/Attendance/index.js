@@ -10,11 +10,11 @@ function Ball({ isGreen }) {
 
 function Attendance({ studentInfoList }) {
   const StudentInfoList = studentInfoList.map((studentInfo) => {
-    const { id, name, number, isAttendance } = studentInfo;
+    const { id, name, studentId, isAttendance } = studentInfo;
     return (
       <li className='list-group-item d-flex justify-content-between' key={id}>
         <div>{name}</div>
-        <div>{number}</div>
+        <div>{studentId}</div>
         <Ball isGreen={isAttendance} />
       </li>
     );

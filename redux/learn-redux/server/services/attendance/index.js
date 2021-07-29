@@ -39,7 +39,6 @@ const updateAttendance = async ({ name, studentId, isAttendance }) => {
   try {
     const query = { studentId };
     await AttendanceModel.updateOne(query, {
-      name,
       studentId,
       isAttendance,
     }).exec();
