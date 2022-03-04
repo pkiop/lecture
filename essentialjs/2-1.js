@@ -11,11 +11,13 @@ obj1.email = 'pkiopb@gmail.com';
 
 const obj2 = obj1;
 
+console.log("변경 전");
 console.log('obj1 : ', obj1);
 console.log('obj2 : ', obj2);
 
 obj2.email = 'empty';
 
+console.log("변경 후");
 console.log('obj1 : ', obj1);
 console.log('obj2 : ', obj2);
 

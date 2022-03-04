@@ -1,4 +1,4 @@
-// 2-6. 펼침 연산자
+// 2-6. 깊이가 깊은 객체 복사 
 
 const obj1 = {
   id: 1,
@@ -10,14 +10,18 @@ const obj1 = {
   }
 };
 
-const obj2 = { ...obj1, email: 'pkiopb@gmail.com' };
+const stringObj1 = JSON.stringify(obj1);
+console.log("stringObj1 : ", stringObj1);
+const obj2 = JSON.parse(stringObj1);
 
-console.log('obj1 : ', obj1.deepObj.deep);
-console.log('obj2 : ', obj2.deepObj.deep);
+console.log("변경 전");
+console.log('obj1 : ', obj1.deepObj);
+console.log('obj2 : ', obj2.deepObj);
 
 obj2.deepObj.deep = 'deep';
 
-console.log('obj1 : ', obj1.deepObj.deep);
-console.log('obj2 : ', obj2.deepObj.deep);
+console.log("변경 후");
+console.log('obj1 : ', obj1.deepObj);
+console.log('obj2 : ', obj2.deepObj);
 
 console.log(obj1.deepObj === obj2.deepObj);
